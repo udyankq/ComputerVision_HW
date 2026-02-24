@@ -32,4 +32,8 @@ python HW14_PushupCounter/main.py
 
 Large video files are excluded via .gitignore
 Some assignments require webcam
-Videos used for testing are not included in the repository
+
+Some assignments (HW6 – Motion Detection and HW14 – Push-up Counter) require video demonstrations.
+The original video files are too large to be uploaded to GitHub due to file size limitations and repository performance considerations.
+Therefore, the demo videos have been uploaded to Google Drive instead.
+The corresponding Google Drive links are provided in a separate file inside the HW6 and HW14 folders.
