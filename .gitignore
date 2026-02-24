@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+# ignore heavy stuff
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.mp4
+*.mp4
+venv/
