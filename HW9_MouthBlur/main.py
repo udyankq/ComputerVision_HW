@@ -5,7 +5,7 @@ face_cascade = cv2.CascadeClassifier(
 )
 
 cap = cv2.VideoCapture(0)
-blur_strength = 57
+blur_strength = 53
 
 while True:
     ret, frame = cap.read()
