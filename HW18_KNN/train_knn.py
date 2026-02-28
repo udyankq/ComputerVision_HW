@@ -10,10 +10,9 @@ from sklearn.preprocessing import StandardScaler
 from skimage.feature import hog
 
 DATASET_DIR = "dataset"
-IMG_SIZE = (96, 96)          # чуть больше, чем 64x64
+IMG_SIZE = (96, 96)
 CLASS_NAMES = ["palm", "fist"]
 
-# HOG params (можно оставить так)
 HOG_PARAMS = dict(
     orientations=9,
     pixels_per_cell=(8, 8),
@@ -45,7 +44,6 @@ def load_dataset():
             img = cv2.resize(img, IMG_SIZE)
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-            # немного “сгладить шум”
             gray = cv2.GaussianBlur(gray, (3, 3), 0)
 
             feat = extract_hog(gray)
@@ -66,7 +64,6 @@ def main():
         X, y, test_size=0.25, random_state=42, stratify=y
     )
 
-    # масштабирование важно для KNN
     scaler = StandardScaler()
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
@@ -93,7 +90,6 @@ def main():
     print("\nReport:")
     print(classification_report(y_test, y_pred, target_names=CLASS_NAMES, zero_division=0))
 
-    # Сохраним всё нужное
     np.savez(
         "knn_model.npz",
         X_train=X_train,
