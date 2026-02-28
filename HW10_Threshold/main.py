@@ -9,10 +9,8 @@ if image is None:
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-# немного сглаживаем
 blurred = cv2.GaussianBlur(gray, (5, 5), 0)
 
-# фиксированный порог
 _, thresh = cv2.threshold(blurred, 120, 255, cv2.THRESH_BINARY)
 
 cv2.imshow("Original", image)
