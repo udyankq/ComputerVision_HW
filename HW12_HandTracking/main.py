@@ -32,11 +32,9 @@ while True:
 
             lm = hand_landmarks.landmark
 
-            # Большой палец
             if lm[TIP_IDS[0]].x > lm[TIP_IDS[0] - 1].x:
                 fingers += 1
 
-            # Остальные пальцы
             for i in range(1, 5):
                 if lm[TIP_IDS[i]].y < lm[TIP_IDS[i] - 2].y:
                     fingers += 1
